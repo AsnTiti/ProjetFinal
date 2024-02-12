@@ -53,7 +53,7 @@ C'est une projet Spring Boot, générer avec Spring Initializr  incluant les dé
 - insérer le plugin Maven spring-boot-maven-plugin dans le fichier pom.xml
 
 ##  les ressources sur Git
-
+https://github.com/AsnTiti/ProjetFinal
 
 ## Auteur:
 
