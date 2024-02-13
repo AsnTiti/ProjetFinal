@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Créer un Artisan</title>
+     <link rel="stylesheet" href="/css/style-create.css" />
+    
+    
+</head>
+<body>
+
+    <h2>Créer un Artisan</h2>
+
+    <form th:action="@{/artisans/new}" th:object="${artisan}" method="post">
+        <label>Nom:</label>
+        <input type="text" th:field="${artisan.nom}" required/><br/>
+        
+        <label>Email:</label>
+        <input type="email" th:field="${artisan.email}" required/><br/>
+        
+        <label>Téléphone:</label>
+        <input type="text" th:field="${artisan.telephone}" required/><br/>
+        
+        <button type="submit">Créer</button>
+    </form>
+
+    <a class="add-artisan-link" th:href="@{/artisans/liste}">Retour à la liste des Artisans</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

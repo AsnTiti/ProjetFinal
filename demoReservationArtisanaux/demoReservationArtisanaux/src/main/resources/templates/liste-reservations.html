@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Liste des Réservations</title>
+        <link rel="stylesheet" href="/css/style-liste.css" />
+    
+</head>
+<body>
+<div class="container">
+    <h2>Liste des Réservations</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Atelier</th>
+                <th>Participant</th>
+                <th>Date de Réservation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="reservation : ${reservations}">
+                <td th:text="${reservation.reservationId}"></td>
+                <td th:text="${reservation.atelier.nom}"></td>
+                <td th:text="${reservation.participant.nom}"></td>
+                <td th:text="${reservation.dateReservation}"></td>
+                <td class="action-links">
+                    <a th:href="@{'/reservations/' + ${reservation.reservationId}}">Voir</a> |
+                    <a th:href="@{'/reservations/' + ${reservation.reservationId} + '/edit'}">Modifier</a> |
+                    <a th:href="@{'/reservations/' + ${reservation.reservationId} + '/delete'}">Supprimer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="add-artisan-link" th:href="@{/reservations/new}">Ajouter une Réservation</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</div>
+</body>
+</html>

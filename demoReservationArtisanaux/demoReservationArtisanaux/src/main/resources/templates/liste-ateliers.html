@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Liste des Ateliers</title>
+        <link rel="stylesheet" href="/css/style-liste.css" />
+    
+</head>
+<body>
+ <div class="container">
+    <h2>Liste des Ateliers</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Artisan</th>
+                <th>Nom</th>
+                <th>Date de l'Atelier</th>
+                <th>Lieu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="atelier : ${ateliers}">
+                <td th:text="${atelier.atelierId}"></td>
+                <td th:text="${atelier.artisan.nom}"></td>
+                <td th:text="${atelier.nom}"></td>
+                <td th:text="${atelier.dateAtelier}"></td>
+                <td th:text="${atelier.lieu}"></td>
+                <td class="action-links">
+                    <a th:href="@{'/ateliers/' + ${atelier.atelierId}}">Voir</a> |
+                    <a th:href="@{'/ateliers/' + ${atelier.atelierId} + '/edit'}">Modifier</a> |
+                    <a th:href="@{'/ateliers/' + ${atelier.atelierId} + '/delete'}">Supprimer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="add-artisan-link" th:href="@{/ateliers/new}">Ajouter un Atelier</a>
+     <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+     
+</div>
+</body>
+</html>

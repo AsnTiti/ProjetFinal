@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Créer un Atelier</title>
+    <link rel="stylesheet" href="/css/style-create.css" />
+    
+</head>
+<body>
+
+    <h2>Créer un Atelier</h2>
+
+    <form th:action="@{/ateliers/new}" th:object="${atelier}" method="post">
+        <label>Nom:</label>
+        <input type="text" th:field="${atelier.nom}" required/><br/>
+        
+        <label>Artisan:</label>
+    <select th:field="${atelier.artisan}" required>
+       <option th:each="artisan : ${artisans}" th:value="${artisan.artisanId}" th:text="${artisan.nom}"></option>
+    </select><br/>
+        
+       <label>Date de l'Atelier:</label>
+<input type="datetime-local" th:field="${atelier.dateAtelierString}" required/><br/>
+
+        <label>Lieu:</label>
+        <input type="text" th:field="${atelier.lieu}" required/><br/>
+        
+        <button type="submit">Créer</button>
+    </form>
+
+    <a class="add-artisan-link" th:href="@{/ateliers/liste}">Retour à la liste des Ateliers</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

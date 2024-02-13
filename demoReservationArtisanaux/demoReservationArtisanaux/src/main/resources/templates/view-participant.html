@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Détails de participant</title>
+        <link rel="stylesheet" href="/css/style-view.css" />
+    
+</head>
+<body>
+
+    <h2>Détails de participant</h2>
+
+    <p>ID: <span th:text="${participant.participantId}"></span></p>
+    <p>Nom: <span th:text="${participant.nom}"></span></p>
+    <p>Email: <span th:text="${participant.email}"></span></p>
+    <p>Téléphone: <span th:text="${participant.telephone}"></span></p>
+
+    <a  class="add-artisan-link"  th:href="@{/participants/liste}">Retour à la liste des participants</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #e44d26;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+    color: #e44d26;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #b9330d;
+}
+
+.action-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.action-links a {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-links a:hover {
+    background-color: #e44d26;
+    color: #fff;
+}
+
+.add-artisan-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 16px;
+    background-color: #e44d26;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.add-artisan-link:hover {
+    background-color: #b9330d;
+    color:black;
+}

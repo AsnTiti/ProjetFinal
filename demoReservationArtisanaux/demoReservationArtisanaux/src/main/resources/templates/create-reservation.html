@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Créer une Réservation</title>
+    <link rel="stylesheet" href="/css/style-create.css" />
+    
+</head>
+<body>
+
+    <h2>Créer une Réservation</h2>
+
+    <form th:action="@{/reservations/new}" th:object="${reservation}" method="post">
+        <label>Atelier:</label>
+        <select th:field="${reservation.atelier}" required>
+            <option th:each="atelier : ${ateliers}" th:value="${atelier.atelierId}" th:text="${atelier.nom}"></option>
+        </select><br/>
+        
+        <label>Participant:</label>
+        <select th:field="${reservation.participant}" required>
+            <option th:each="participant : ${participants}" th:value="${participant.participantId}" th:text="${participant.Nom}"></option>
+        </select><br/>
+        
+        <label>Date de Réservation:</label>
+        <input type="datetime-local" th:field="${reservation.dateReservationString}" required/><br/>
+        
+        <button type="submit">Créer</button>
+    </form>
+
+    <a class=" add-artisan-link" th:href="@{/reservations/liste}">Retour à la liste des Réservations</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Détails de l'Atelier</title>
+    <link rel="stylesheet" href="/css/style-view.css" />
+    
+</head>
+<body>
+
+    <h2>Détails de l'Atelier</h2>
+
+    <p>ID: <span th:text="${atelier.atelierId}"></span></p>
+    <p>Artisan: <span th:text="${atelier.artisan.nom}"></span></p>
+    <p>Nom: <span th:text="${atelier.nom}"></span></p>
+    <p>Date de l'Atelier: <span th:text="${atelier.dateAtelierString}"></span></p>
+    <p>Lieu: <span th:text="${atelier.lieu}"></span></p>
+
+    <a  class="add-artisan-link"  th:href="@{/ateliers/liste}">Retour à la liste des Ateliers</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

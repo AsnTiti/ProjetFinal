@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Modifier un Artisan</title>
+    <link rel="stylesheet" href="/css/style-edit.css" />
+    
+</head>
+<body>
+
+    <h2>Modifier un Artisan</h2>
+
+    <form th:action="@{'/artisans/' + ${artisan.Artisan_ID} + '/edit'}" th:object="${artisan}" method="post">
+        <label>Nom:</label>
+        <input type="text" th:field="${artisan.Nom}" required/><br/>
+        
+        <label>Email:</label>
+        <input type="email" th:field="${artisan.Email}" required/><br/>
+        
+        <label>Téléphone:</label>
+        <input type="text" th:field="${artisan.Telephone}" required/><br/>
+        
+        <button type="submit">Modifier</button>
+    </form>
+
+    <a  class="add-artisan-link"  th:href="@{/artisans}">Retour à la liste des Artisans</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

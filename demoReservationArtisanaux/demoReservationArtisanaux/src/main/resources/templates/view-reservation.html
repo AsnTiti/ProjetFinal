@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Détails de la Réservation</title>
+        <link rel="stylesheet" href="/css/style-view.css" />
+    
+</head>
+<body>
+
+    <h2>Détails de la Réservation</h2>
+
+    <p>ID: <span th:text="${reservation.reservationId}"></span></p>
+    <p>Atelier: <span th:text="${reservation.atelier.nom}"></span></p>
+    <p>Participant: <span th:text="${reservation.participant.nom}"></span></p>
+    <p>Date de Réservation: <span th:text="${reservation.dateReservationString}"></span></p>
+
+    <a  class="add-artisan-link" th:href="@{/reservations/liste}">Retour à la liste des Réservations</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+
+</body>
+</html>

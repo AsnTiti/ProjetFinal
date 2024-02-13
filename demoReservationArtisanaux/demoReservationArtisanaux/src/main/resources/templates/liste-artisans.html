@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Liste des Artisans</title>
+    <link rel="stylesheet" href="/css/style-liste.css" />
+</head>
+<body>
+
+    <div class="container">
+        <h2>Liste des Artisans</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="artisan : ${artisans}">
+                    <td th:text="${artisan.artisanId}"></td>
+                    <td th:text="${artisan.nom}"></td>
+                    <td th:text="${artisan.email}"></td>
+                    <td th:text="${artisan.telephone}"></td>
+                    <td class="action-links">
+                        <a th:href="@{'/artisans/' + ${artisan.artisanId}}">Voir</a> |
+                        <a th:href="@{'/artisans/' + ${artisan.artisanId} + '/edit'}">Modifier</a> |
+                        <a th:href="@{'/artisans/' + ${artisan.artisanId} + '/delete'}">Supprimer</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a  class="add-artisan-link" th:href="@{/artisans/new}">Ajouter un Artisan</a>
+        <a  class="add-artisan-link" th:href="@{/}">Retour à l'accueil</a>
+        
+    </div>
+
+</body>
+</html>
